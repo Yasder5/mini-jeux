@@ -1,0 +1,32 @@
+# Jeux multijoueurs yasder5 (socle commun dans common/) : nomdecode, plus4 et douze .yasder5.fr
+x-jeu: &jeu
+  image: python:3.11-alpine
+  user: "1000:1000"
+  command: ["python", "-u", "server.py"]
+  environment:
+    TZ: Europe/Paris
+  mem_limit: 96m
+  network_mode: bridge
+  volumes:
+    - ./:/app:ro
+  restart: unless-stopped
+
+services:
+  nomdecode:
+    <<: *jeu
+    container_name: nomdecode
+    working_dir: /app/nomdecode
+    ports:
+      - "1429:8000"
+  plus4:
+    <<: *jeu
+    container_name: plus4
+    working_dir: /app/plus4
+    ports:
+      - "1430:8000"
+  douze:
+    <<: *jeu
+    container_name: douze
+    working_dir: /app/douze
+    ports:
+      - "1431:8000"

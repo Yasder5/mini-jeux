@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0a">
+<title>Plus4 · yasder5</title>
+<meta name="description" content="Plus4 : le jeu de cartes de défausse entre potes, en ligne. Même couleur ou même valeur, +2, +4, inversions. Gratuit, sans compte.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Plus4 · yasder5">
+<meta property="og:description" content="Le jeu de cartes entre potes : même couleur ou même valeur, +2, +4, inversions. Gratuit, sans compte.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/common/core.css">
+<link rel="stylesheet" href="/common/fx.css">
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+<canvas id="orb" aria-hidden="true"></canvas>
+<header class="top">
+  <a class="logo" href="./">plus4<span>.</span></a>
+  <span class="top__code mono" id="topcode"></span>
+  <button class="link mono" id="rules-btn" type="button">Règles</button>
+</header>
+<main id="app"></main>
+<footer class="legal-foot mono"><a href="https://yasder5.fr/mentions-legales.html">Mentions légales</a> · <a href="https://yasder5.fr/confidentialite.html">Confidentialité</a> · <a href="https://yasder5.fr/cgu.html">Conditions d'utilisation</a> · <a href="https://yasder5.fr">yasder5.fr</a></footer>
+<div class="toast mono" id="toast" role="status"></div>
+<div class="net mono" id="net" role="status">Connexion perdue, reconnexion…</div>
+
+<dialog class="rules" id="rules">
+  <form method="dialog"><button class="link mono close" aria-label="Fermer">Fermer</button></form>
+  <p class="kicker">Règles</p>
+  <h2>Vide <mark>ta main</mark>.</h2>
+  <ul>
+    <li>Pose une carte de <b>même couleur</b> ou de <b>même valeur</b> que celle du dessus. Le <b>joker</b> se pose sur tout et choisit la couleur.</li>
+    <li><b>+2</b> et <b>+4</b> : le suivant pioche et passe. Avec le cumul activé, il peut répondre par un +2 (sur un +2) ou un +4, et le suivant prend tout.</li>
+    <li><b>⇄ Inversion</b> change le sens (à deux, elle fait rejouer). <b>⊘ Passe</b> saute le joueur suivant.</li>
+    <li>Pas de carte jouable : pioche. Si la carte piochée passe, tu peux la poser tout de suite, sinon ton tour s'arrête.</li>
+    <li>Dès qu'il ne te reste qu'<b>une carte</b>, appuie sur « Une ! ». Tant que tu ne l'as pas fait et que le joueur suivant n'a pas joué, les autres peuvent te coincer : <b>2 cartes</b> de pénalité.</li>
+    <li>Le premier à vider sa main gagne les points des cartes restantes des autres (chiffres : leur valeur, actions : 20, jokers : 50).</li>
+  </ul>
+  <p class="kicker">Règles en option (choisies par l'hôte)</p>
+  <ul>
+    <li><b>Règle du 0</b> : poser un 0 fait passer toutes les mains au joueur suivant, dans le sens du jeu.</li>
+    <li><b>Règle du 7</b> : poser un 7 permet d'échanger sa main avec le joueur de son choix.</li>
+    <li><b>Interception</b> : une carte strictement identique à celle du dessus se pose même hors de son tour, et le jeu repart de toi.</li>
+    <li><b>Défi du +4</b> (sans cumul) : le +4 n'est permis que si on n'a pas la couleur demandée. La victime peut contester : si le poseur avait la couleur, c'est lui qui pioche 4 ; sinon la victime pioche 6.</li>
+  </ul>
+</dialog>
+<script src="/common/fx.js"></script>
+<script src="/common/core.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

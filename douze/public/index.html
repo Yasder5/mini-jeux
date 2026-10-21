@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0a">
+<title>Douze · yasder5</title>
+<meta name="description" content="Douze : le jeu de cartes à 12 cartes cachées, entre potes et en ligne. Pioche, échange, aligne trois cartes identiques. Le moins de points gagne. Gratuit, sans compte.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Douze · yasder5">
+<meta property="og:description" content="12 cartes cachées, des colonnes qui disparaissent, le moins de points gagne. Gratuit, sans compte.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/common/core.css">
+<link rel="stylesheet" href="/common/fx.css">
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+<canvas id="orb" aria-hidden="true"></canvas>
+<header class="top">
+  <a class="logo" href="./">douze<span>.</span></a>
+  <span class="top__code mono" id="topcode"></span>
+  <button class="link mono" id="rules-btn" type="button">Règles</button>
+</header>
+<main id="app"></main>
+<footer class="legal-foot mono"><a href="https://yasder5.fr/mentions-legales.html">Mentions légales</a> · <a href="https://yasder5.fr/confidentialite.html">Confidentialité</a> · <a href="https://yasder5.fr/cgu.html">Conditions d'utilisation</a> · <a href="https://yasder5.fr">yasder5.fr</a></footer>
+<div class="toast mono" id="toast" role="status"></div>
+<div class="net mono" id="net" role="status">Connexion perdue, reconnexion…</div>
+
+<dialog class="rules" id="rules">
+  <form method="dialog"><button class="link mono close" aria-label="Fermer">Fermer</button></form>
+  <p class="kicker">Règles</p>
+  <h2>Le moins <mark>de points</mark>.</h2>
+  <ul>
+    <li>150 cartes de <b>−2 à 12</b>. Chacun a <b>12 cartes cachées</b> en 3 lignes et 4 colonnes, et en retourne 2 au début. Celui qui montre le plus de points commence.</li>
+    <li>À ton tour, au choix :
+      <ul>
+        <li>tu <b>prends la carte de la défausse</b> et tu l'échanges avec une de tes cartes (cachée ou non) ;</li>
+        <li>tu <b>pioches</b> : tu échanges la carte piochée avec une des tiennes, ou tu la défausses et tu <b>retournes</b> une de tes cartes cachées.</li>
+      </ul>
+      La carte remplacée part, visible, sur la défausse.</li>
+    <li><b>Trois cartes visibles identiques dans une colonne</b> partent à la défausse : elles ne comptent plus.</li>
+    <li>Dès qu'un joueur a <b>toutes ses cartes visibles</b>, chacun des autres joue un <b>dernier tour</b>. On retourne tout et on compte.</li>
+    <li>Si celui qui a fini n'a pas <b>strictement le moins</b> de points de la manche, ses points sont <b>doublés</b> (s'ils sont positifs). L'hôte peut couper cette règle.</li>
+    <li>Les manches s'enchaînent. Quand quelqu'un atteint le <b>score cible</b> (100 par défaut), la partie s'arrête : le plus petit total gagne.</li>
+  </ul>
+  <p class="kicker">Couleurs</p>
+  <ul>
+    <li>Violet : −2 et −1 · Bleu : 0 · Citron : 1 à 4 · Jaune : 5 à 8 · Corail : 9 à 12. Le chiffre est toujours écrit en gros.</li>
+    <li>Sur ordinateur : <b>D</b> piocher, <b>P</b> prendre la défausse, <b>X</b> défausser la carte piochée.</li>
+  </ul>
+</dialog>
+<script src="/common/fx.js"></script>
+<script src="/common/core.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

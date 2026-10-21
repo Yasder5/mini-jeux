@@ -1,0 +1,24 @@
+/* Effets partagés (fx.js). Copie identique dans ~/undercover/public/fx.css */
+.fx-spark { position: fixed; width: 7px; height: 7px; border-radius: 50%; pointer-events: none; z-index: 60; }
+.fx-confetti { position: fixed; top: 0; z-index: 60; pointer-events: none; border-radius: 2px; }
+.fx-flash { position: fixed; inset: 0; z-index: 55; pointer-events: none; }
+.fx-count { position: fixed; inset: 0; z-index: 58; display: grid; place-items: center; background: rgba(10, 10, 10, .72); backdrop-filter: blur(6px); pointer-events: none; }
+.fx-count__n { font: 900 clamp(120px, 30vw, 260px) / 1 Archivo, sans-serif; letter-spacing: -.06em; color: #f5f5f0; }
+.fx-count__n.is-go { font-size: clamp(54px, 11vw, 120px); text-transform: uppercase; color: transparent; -webkit-text-stroke: 2px #d3fd50; }
+.fx-av { flex: none; display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--av); color: #0a0a0a; font: 800 14px/1 Archivo, sans-serif; }
+.fx-bubble { position: fixed; bottom: 90px; z-index: 50; pointer-events: none; display: flex; flex-direction: column; align-items: center; }
+.fx-bubble__e { font-size: 44px; line-height: 1; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, .5)); }
+.fx-bubble__n { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-top: 4px; background: rgba(10, 10, 10, .8); padding: 3px 8px; border-radius: 999px; }
+.fx-emotes { position: fixed; right: 14px; bottom: 14px; z-index: 45; display: flex; align-items: center; gap: 6px; }
+.fx-emotes__t { width: 46px; height: 46px; border-radius: 50%; border: 1px solid #262624; background: rgba(18, 18, 18, .92); color: #f5f5f0; font-size: 22px; cursor: pointer; transition: border-color .2s, transform .25s; }
+.fx-emotes__t:hover { border-color: #d3fd50; transform: scale(1.06); }
+.fx-emotes__list { display: flex; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(18, 18, 18, .92); border: 1px solid #262624; transform-origin: right center; transform: scaleX(0); opacity: 0; pointer-events: none; transition: transform .3s cubic-bezier(.2, .9, .3, 1.2), opacity .2s; }
+.fx-emotes.is-open .fx-emotes__list { transform: none; opacity: 1; pointer-events: auto; }
+.fx-emotes__list button { width: 38px; height: 38px; border: 0; border-radius: 50%; background: none; font-size: 22px; cursor: pointer; transition: transform .2s, background .2s; }
+.fx-emotes__list button:hover { transform: scale(1.2); background: rgba(255, 255, 255, .06); }
+.fx-emotes__list button:active { transform: scale(.9); }
+.mute[aria-pressed="false"] { color: #ff6b5a; }
+@media (min-width: 900px) { .fx-emotes .fx-emotes__list { transform: none; opacity: 1; pointer-events: auto; } .fx-emotes__t { display: none; } }
+.fx-av--off { filter: grayscale(1); opacity: .4; box-shadow: inset 0 0 0 1px #8f8f8a; }
+.fx-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 899px) { body.fx-quiet .fx-emotes { display: none; } }

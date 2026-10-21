@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0a0a0a">
+<title>Nom de code · yasder5</title>
+<meta name="description" content="Nom de code : deux équipes, deux maîtres-espions, 25 mots. Un indice, un nombre, trouvez vos agents. Gratuit, sans compte.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nom de code · yasder5">
+<meta property="og:description" content="Deux équipes, deux maîtres-espions, 25 mots. Un indice, un nombre, trouvez vos agents. Gratuit, sans compte.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/common/core.css">
+<link rel="stylesheet" href="/common/fx.css">
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+<canvas id="orb" aria-hidden="true"></canvas>
+<header class="top">
+  <a class="logo" href="./">nom de code<span>.</span></a>
+  <span class="top__code mono" id="topcode"></span>
+  <button class="link mono" id="rules-btn" type="button">Règles</button>
+</header>
+<main id="app"></main>
+<footer class="legal-foot mono"><a href="https://yasder5.fr/mentions-legales.html">Mentions légales</a> · <a href="https://yasder5.fr/confidentialite.html">Confidentialité</a> · <a href="https://yasder5.fr/cgu.html">Conditions d'utilisation</a> · <a href="https://yasder5.fr">yasder5.fr</a></footer>
+<div class="toast mono" id="toast" role="status"></div>
+<div class="net mono" id="net" role="status">Connexion perdue, reconnexion…</div>
+
+<dialog class="rules" id="rules">
+  <form method="dialog"><button class="link mono close" aria-label="Fermer">Fermer</button></form>
+  <p class="kicker">Règles</p>
+  <h2>Un mot, <mark>un nombre</mark>.</h2>
+  <p>Deux équipes, <b>Citron</b> et <b>Corail</b>. 25 mots sur la table. Chaque équipe a un <b>maître-espion</b> qui voit à qui appartient chaque mot.</p>
+  <ul>
+    <li>À son tour, le maître-espion donne <b>un seul mot</b> et <b>un nombre</b> : combien de mots de la grille s'y rattachent (« Océan, 2 »).</li>
+    <li>Ses agents touchent une carte pour la proposer, puis la <b>retournent</b>. Bonne couleur : ils peuvent continuer (nombre + 1 essais max).</li>
+    <li>Carte neutre ou adverse : le tour passe. Carte <b>assassin</b> : l'équipe perd immédiatement.</li>
+    <li>L'équipe qui commence a 9 mots à trouver, l'autre 8. La première à tous les trouver gagne.</li>
+    <li>« 0 » ou « ∞ » : essais illimités. Les agents peuvent passer la main après au moins un essai.</li>
+  </ul>
+  <p class="muted">Jouez en vocal ou dans la même pièce : les agents discutent, le maître-espion se tait.</p>
+</dialog>
+<script src="/common/fx.js"></script>
+<script src="/common/core.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
